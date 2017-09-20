@@ -13,7 +13,7 @@ public class WebCrawler {
 	int pageNum;
 	String urlTpl;
 	HttpResponse httpResponse ;
-	
+	 
 	exceptionHandel eh;
 	/**
 	 * 异常处理接口, 返回true 则中断行为
@@ -93,10 +93,9 @@ public class WebCrawler {
 
 	public static void main(String[] args)  {
 		WebCrawler wc = new WebCrawler();
-		wc.setPageNum(7997172);
+		wc.setPageNum(7997172); 
 		wc.setUrlTpl("http://www.53zw.com/yuedu/25/25127/{pageNum}.html");
 		exceptionHandel eh =   new exceptionHandel(){
-			@Override
 			public boolean doException(WebCrawler wc) {
 				if(wc.getHttpResponse().getStateCode().equals("522")){
 					wc.setPageNum(wc.getPageNum());
