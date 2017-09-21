@@ -1,4 +1,4 @@
-package joye.test.qrcode;
+package com.sunit.global.util;
 
 import java.awt.Color;
 import java.awt.Graphics2D;

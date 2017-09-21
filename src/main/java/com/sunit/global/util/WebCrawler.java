@@ -1,12 +1,16 @@
-package joye.test;
+package com.sunit.global.util;
 
 import java.io.IOException;
 
 import org.apache.commons.httpclient.HttpException;
 
-import com.sunit.global.util.HttpUtil;
 import com.sunit.global.util.alipay.util.httpClient.HttpResponse;
 
+/**
+ * 爬虫类
+ * @author Administrator
+ *
+ */
 public class WebCrawler {
 
 	
