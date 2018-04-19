@@ -18,8 +18,13 @@ public class WebCrawler {
 	String urlTpl;
 	HttpResponse httpResponse ;
 	 
+	String queryStringForGet;
+	
 	exceptionHandel eh;
-	/**
+	
+	responsedHandel rh;
+	
+	/** 
 	 * 异常处理接口, 返回true 则中断行为
 	 * 
 	 * @author Administrator
@@ -29,6 +34,83 @@ public class WebCrawler {
 		public boolean doException(WebCrawler wc);
 	}
 
+	/**
+	 * 数据返回后的处理行为
+	 * 
+	 * 类名称：responsedHandel
+	 * 类描述：
+	 * 创建人：Administrator
+	 * 创建时间：2018年1月2日 下午4:44:18
+	 * 修改人：joye
+	 * 修改时间：2018年1月2日 下午4:44:18
+	 * 修改备注：
+	 * @version 
+	 *
+	 */
+	public interface responsedHandel {
+		public boolean doAction(WebCrawler wc,String responseText);
+	}
+
+	
+	/**
+	 *  期货
+	* @Title: Futures 
+	* @Description: 
+	* @param      
+	* @return void  
+	* @throws 
+	* @author joye 
+	* 2018年1月2日 下午2:25:48
+	 */
+			
+	public  void Futures () {
+		
+
+
+		// String url ="http://www.53zw.com/yuedu/25/25127/7997164.html";
+		HttpUtil ht = new HttpUtil();
+		String url=this.getUrlTpl();
+		
+		try {
+				System.out.println(url);
+				ht.getRequest().setMethod(ht.getRequest().METHOD_GET);
+				ht.getRequest().setQueryString(this.getQueryStringForGet());
+				HttpResponse re = ht.doAction(url);
+				this.setHttpResponse(re);
+				if (re.getStateCode().equals("200")) {
+					String str = new String(re.getByteResult(), "utf-8"); 
+					if (this.getRh()!=null && this.getRh().doAction(this,str)) { 
+						
+					}
+				} else { // httpcode 
+					System.out.println(url + "    httpcode:" + re.getStateCode());
+					if (this.getEh().doException(this)) { 
+						return;
+					}
+
+				}
+
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace(); 
+		} 
+//		catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} 
+
+	
+		
+		
+		
+		
+	}
+	
+	
+	
 	/**
 	 *  
 	 * crawler 网络小说
@@ -143,5 +225,29 @@ public class WebCrawler {
 
 	public void setEh(exceptionHandel eh) {
 		this.eh = eh;
+	}
+
+
+
+	public String getQueryStringForGet() {
+		return queryStringForGet;
+	}
+
+
+
+	public void setQueryStringForGet(String queryStringForGet) {
+		this.queryStringForGet = queryStringForGet;
+	}
+
+
+
+	public responsedHandel getRh() {
+		return rh;
+	}
+
+
+
+	public void setRh(responsedHandel rh) {
+		this.rh = rh;
 	}
 }

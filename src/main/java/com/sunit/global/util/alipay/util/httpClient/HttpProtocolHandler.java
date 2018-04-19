@@ -96,7 +96,8 @@ public class HttpProtocolHandler {
      */
     public HttpResponse execute(HttpRequest request, String strParaFileName, String strFilePath) throws HttpException, IOException {
         HttpClient httpclient = new HttpClient(connectionManager);
-
+        httpclient.getHostConfiguration().setProxy("127.0.0.1", 8888);
+ 
         // 设置连接超时
         int connectionTimeout = defaultConnectionTimeout;
         if (request.getConnectionTimeout() > 0) {
@@ -147,6 +148,15 @@ public class HttpProtocolHandler {
 
         // 设置Http Header中的User-Agent属性
         method.addRequestHeader("User-Agent", "Mozilla/4.0");
+//        method.addRequestHeader("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+//		method.addRequestHeader("Accept-Encoding","gzip,deflate,sdch");
+//		method.addRequestHeader("Accept-Language","zh-CN,zh;q=0.8");
+//		method.addRequestHeader("Cache-Control","max-age=0");
+//		method.addRequestHeader("Connection","keep-alive");
+//		method.addRequestHeader("Host","nufm.dfcfw.com");
+//		method.addRequestHeader("Upgrade-Insecure-Requests","1");
+//		method.addRequestHeader("User-Agent","Mozilla/5.0(WindowsNT6.1;WOW64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/55.0.2883.87Safari/537.36");
+        
         HttpResponse response = new HttpResponse();
 
         try {

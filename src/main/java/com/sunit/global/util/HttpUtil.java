@@ -44,6 +44,7 @@ public class HttpUtil {
 		request.setUrl(url);
 		request.setParameters(parameters.toArray(new NameValuePair[parameters.size()]));
   		HttpProtocolHandler httpHandle = HttpProtocolHandler.getInstance();
+  		
 		HttpResponse response= httpHandle.execute(request,"", "");
 		response.getStateCode();
 		String  str = new String (response.getByteResult(),charset); 
