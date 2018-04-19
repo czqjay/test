@@ -22,7 +22,7 @@ public class ClientValidatorHandler  implements SOAPHandler<SOAPMessageContext>{
    @Override
    public boolean handleMessage(SOAPMessageContext context) {
 
-	System.out.println("Client : handleMessage()......");
+	   System.out.println("ClientValidatorHandler.handleMessage()");
 
 	Boolean isRequest = (Boolean) context.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY);
 
@@ -68,24 +68,24 @@ public class ClientValidatorHandler  implements SOAPHandler<SOAPMessageContext>{
 
 	@Override
 	public boolean handleFault(SOAPMessageContext context) {
-		System.out.println("Client : handleFault()......");
+		System.out.println("ClientValidatorHandler.handleFault()");
 		return true;
 	}
 
 	@Override
 	public void close(MessageContext context) {
-		System.out.println("Client : close()......");
+		System.out.println("ClientValidatorHandler.close()");
 	}
 
 	@Override
 	public Set<QName> getHeaders() {
-		System.out.println("Client : getHeaders()......");
+		System.out.println("ClientValidatorHandler.getHeaders()");
 		return null;
 	}
 
    //return current client mac address
    private String getMACAddress(){
-
+	   System.out.println("ClientValidatorHandler.getMACAddress()");
 	InetAddress ip;
 	StringBuilder sb = new StringBuilder();
 
@@ -116,7 +116,12 @@ public class ClientValidatorHandler  implements SOAPHandler<SOAPMessageContext>{
 		e.printStackTrace();
 
 	}
-
+  
+	if(1==1) {
+		 sb =  new StringBuilder("00-50-56-C0-00-01");
+		
+	}
+	
 	return sb.toString();
    }
 

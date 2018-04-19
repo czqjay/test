@@ -2,6 +2,7 @@
 package test.webservice.client;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.RequestWrapper;
@@ -23,6 +24,7 @@ public interface WebService {
 
     /**
      * 
+     * @param arg0
      * @return
      *     returns java.lang.String
      */
@@ -30,6 +32,8 @@ public interface WebService {
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "test", targetNamespace = "http://webservice.test/", className = "test.webservice.client.Test")
     @ResponseWrapper(localName = "testResponse", targetNamespace = "http://webservice.test/", className = "test.webservice.client.TestResponse")
-    public String test();
+    public String test(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
 }

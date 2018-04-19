@@ -22,7 +22,7 @@ public class ValidatorHandler  implements SOAPHandler<SOAPMessageContext>{
 	
 	   public boolean handleMessage(SOAPMessageContext context) {
  
-		System.out.println("Server : handleMessage()......");
+		   System.out.println("ValidatorHandler.handleMessage()");
 
 		Boolean isRequest = (Boolean) context.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY);
 
@@ -52,7 +52,7 @@ public class ValidatorHandler  implements SOAPHandler<SOAPMessageContext>{
 		     //if no mac address found? throw exception
 		     Node macNode = (Node) it.next();
 		     String macValue = (macNode == null) ? null : macNode.getValue();
-
+		     System.out.println(macValue+" = macValue");
 		      if (macValue == null){
 		      	  generateSOAPErrMessage(soapMsg, "No mac address in header block.");
 		      }
@@ -78,22 +78,23 @@ public class ValidatorHandler  implements SOAPHandler<SOAPMessageContext>{
 		}
 
 		public boolean handleFault(SOAPMessageContext context) {
+System.out.println("ValidatorHandler.handleFault()");
 
-			System.out.println("Server : handleFault()......");
 
 			return true;
 		}
 
 		public void close(MessageContext context) {
-			System.out.println("Server : close()......");
+			System.out.println("ValidatorHandler.close()");
 		}
  
 		public Set<QName> getHeaders() {
-			System.out.println("Server : getHeaders()......");
+			System.out.println("ValidatorHandler.getHeaders()");
 			return null;
 		}
 
 	     private void generateSOAPErrMessage(SOAPMessage msg, String reason) {
+	    	 System.out.println("ValidatorHandler.generateSOAPErrMessage()");
 	       try {
 	          SOAPBody soapBody = msg.getSOAPPart().getEnvelope().getBody();
 	          SOAPFault soapFault = soapBody.addFault();

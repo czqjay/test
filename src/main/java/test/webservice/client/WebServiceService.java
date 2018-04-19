@@ -19,8 +19,8 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "WebServiceService", targetNamespace = "http://webservice.test/", wsdlLocation = "http://localhost:8081/ws/test?wsdl")
-@HandlerChain(file="client-handler-chain.xml") 
+@HandlerChain(file="client-handler-chain.xml")
+@WebServiceClient(name = "WebServiceService", targetNamespace = "http://webservice.test/", wsdlLocation = "http://192.168.0.119:8081/ws/test?wsdl")
 public class WebServiceService
     extends Service
 {
@@ -33,9 +33,9 @@ public class WebServiceService
         try {
             URL baseUrl;
             baseUrl = test.webservice.client.WebServiceService.class.getResource(".");
-            url = new URL(baseUrl, "http://localhost:8081/ws/test?wsdl");
+            url = new URL(baseUrl, "http://192.168.0.119:8081/ws/test?wsdl");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'http://localhost:8081/ws/test?wsdl', retrying as a local file");
+            logger.warning("Failed to create URL for the wsdl Location: 'http://192.168.0.119:8081/ws/test?wsdl', retrying as a local file");
             logger.warning(e.getMessage());
         }
         WEBSERVICESERVICE_WSDL_LOCATION = url;
