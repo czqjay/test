@@ -1,87 +1,119 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>test</groupId>
-  <artifactId>test</artifactId>
-  <packaging>jar</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>test</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    
-    
-    
-    <dependency>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>test</groupId>
+	<artifactId>test</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>test</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+
+
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>3.0.7.RELEASE</version>
 		</dependency>
-    
-    
-      
-    <dependency>
-			 <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-core</artifactId>
+
+
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
 			<version>3.1.0.RELEASE</version>
 		</dependency>
-    
-<dependency>
-    <groupId>commons-codec</groupId>
-    <artifactId>commons-codec</artifactId>
-    <version>1.6</version>
-</dependency>
 
-    
-    	<dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.6</version>
+		</dependency>
+
+
+		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.1</version>
 			<scope>provided</scope>
 		</dependency>
-		
-		<dependency> 
+
+		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.16</version>
 		</dependency>
 
-<!-- https://mvnrepository.com/artifact/jcifs/jcifs -->
-<dependency>
-    <groupId>jcifs</groupId>
-    <artifactId>jcifs</artifactId>
-    <version>1.3.17</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/jcifs/jcifs -->
+		<dependency>
+			<groupId>jcifs</groupId>
+			<artifactId>jcifs</artifactId>
+			<version>1.3.17</version>
+		</dependency>
 
-		
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>3.3.2.GA</version>
 		</dependency>
-		
-    <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+
+		<!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/cn.joylau.code/joylau-shiro-freemark -->
+
+
+
+		<!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-core -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-core</artifactId>
+			<version>5.5.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jms_1.1_spec</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.5.8</version>
+		</dependency>
+
 <dependency>
-    <groupId>commons-lang</groupId>
-    <artifactId>commons-lang</artifactId>
-    <version>2.5</version>
-</dependency>
-    
-<!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
-<dependency>
-    <groupId>commons-httpclient</groupId>
-    <artifactId>commons-httpclient</artifactId>
-    <version>3.0.1</version>
+  <groupId>net.sf.fax4j</groupId>
+  <artifactId>fax4j</artifactId>
+  <version>0.44.2</version>
 </dependency>
 
-<!-- https://mvnrepository.com/artifact/cn.joylau.code/joylau-shiro-freemark -->
 
-    
-    
-  </dependencies>
+	</dependencies>
 </project>
